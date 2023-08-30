@@ -1,0 +1,49 @@
+# Declare network enteties (servers and clients)
+
+network:
+  servers:               # Here, you will declare a list of servers
+    - s1:                # server name
+        ip: 127.0.0.1  # server IP
+        port: 8000
+    - s2:                # server name
+        ip: 127.0.0.1  # server IP
+        port: 8001  # service port
+  clients:
+    - c1:
+        ip: 192.168.1.1
+        port: 6000
+
+# Delare services
+
+service:
+  - service1:            # Service name
+      providers:         # List of service providers (servers)
+        - s1
+      tenants:           # List of service tenants (clients)
+        - c1
+      rpcs:              # List of RPCs that the providers can provide
+        - rpc1
+  - service2:            # Service name
+      providers:         # List of service providers (servers)
+        - s2
+      tenants:           # List of service tenants (clients)
+      rpcs:              # List of RPCs that the providers can provide
+        - rpc2
+# Declare RPCs
+rpc:
+  - rpc1:                     # Name of the RPC
+      args:                   # List of argument types
+        - int                 # integer type (don't bother with subtypes, like int32, short, etc.)
+      returns:                # List of output types
+        - int
+      src: rpces/rpc1.py    # RPC scripts are Python scripts with a single function,
+      # and are assumed to be locally available to the initializer
+      # code.
+
+  - rpc2:
+      args:
+        - str           # List of ints
+        - str           # List of strings
+      returns:
+        - str
+      src: rpces/rpc2.py
