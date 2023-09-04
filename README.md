@@ -1,6 +1,5 @@
 # Implementation-of-an-RPC-using-raw-IPv4-sockets-in-Python
 In this repository, a RPC is implemented using raw IPv4 sockets in Python. This project was my final project for the 'Data Networks' course instructed by Dr. Pakravan at Sharif University of Technology. For more informatino, read the "project_doc.pdf" file. The codes are "Codes" folder.
-![1666937835556](https://github.com/alibagheri-98/Implementation-of-an-RPC-using-raw-IPv4-sockets-in-Python/assets/112773855/8bee0767-889d-4078-be8a-32ae642af6ea)
 
 ## Implementation
 To implement RPC using raw IPv4 sockets in Python, you can follow these general steps:
